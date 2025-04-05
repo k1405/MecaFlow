@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehículos | Mecaflow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Mecaflow</div>
+    <nav>
+        <a href="home.html">Cuentas</a>
+      <a href="cuentas.html">Cuentas</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="vehiculos.html">Vehículos</a>
+    </nav>
+    <button class="logout-btn" onclick="location.href='login.html'">Cerrar sesión</button>
+  </header>
+
+  <main>
+    <h1>Listado de Vehículos</h1>
+
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Número de placa</th>
+            <th>Marca</th>
+            <th>Color</th>
+            <th>Dueño</th>
+            <th>Año</th>
+            <th>Detalles</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AB123CD</td>
+            <td>Ford</td>
+            <td>Rojo</td>
+            <td>Juan Pérez</td>
+            <td>2018</td>
+            <td>Último servicio: 01/04/2025</td>
+            <td>
+              <button class="btn-editar">Editar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>XY987ZT</td>
+            <td>Chevrolet</td>
+            <td>Azul</td>
+            <td>María López</td>
+            <td>2020</td>
+            <td>Revisión pendiente</td>
+            <td>
+              <button class="btn-editar">Editar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+          <!-- Más filas aquí -->
+        </tbody>
+      </table>
+      <button class="btn-agregar">Agregar Vehículo</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Mecaflow. Todos los derechos reservados.</p>
+    <p>
+      <a href="#">Términos de uso</a> |
+      <a href="#">Privacidad</a> |
+      <a href="#">Contacto</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

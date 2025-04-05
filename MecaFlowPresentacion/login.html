@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión | Mecaflow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <main>
+    <h1>Iniciar Sesión</h1>
+    <form action="#" method="post" class="formulario">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Ingresar</button>
+
+      <p class="italic">¿No tenés cuenta? <a href="registro.html">Registrate aquí</a></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Mecaflow. Todos los derechos reservados.</p>
+    <p>
+      <a href="#">Términos de uso</a> |
+      <a href="#">Privacidad</a> |
+      <a href="#">Contacto</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
