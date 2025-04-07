@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vehículos | Mecaflow</title>
+  <title>Vehículos del Cliente | Mecaflow</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap"
     rel="stylesheet">
@@ -16,19 +16,19 @@
   <header>
     <div class="logo">Mecaflow</div>
     <nav>
-      <a href="home.html">Inicio</a>
-      <a href="cuentas.html">Cuentas</a>
-      <a href="clientes.html">Clientes</a>
-      <a href="vehiculos.html">Vehículos</a>
-      <a href="marcas.html">Registro Entrada/Salida</a>
-      <a href="registrosMarcas.html">Historial Semanal</a>
-      <a href="vehiculoCliente">Vehiculos Clientes</a>
+        <a href="home.html">Inicio</a>
+        <a href="cuentas.html">Cuentas</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="vehiculos.html">Vehículos</a>
+        <a href="marcas.html">Registro Entrada/Salida</a>
+        <a href="registrosMarcas.html">Historial Semanal</a>
+        <a href="vehiculoCliente">Vehiculos Clientes</a>
     </nav>
     <button class="logout-btn" onclick="location.href='login.html'">Cerrar sesión</button>
   </header>
 
   <main>
-    <h1>Listado de Vehículos</h1>
+    <h1>Estado de tu Vehículo</h1>
 
     <section>
       <table>
@@ -40,7 +40,7 @@
             <th>Dueño</th>
             <th>Año</th>
             <th>Detalles</th>
-            <th>Acciones</th>
+            <th>Progreso</th>
           </tr>
         </thead>
         <tbody>
@@ -50,30 +50,17 @@
             <td>Rojo</td>
             <td>Juan Pérez</td>
             <td>2018</td>
-            <td>Último servicio: 01/04/2025</td>
+            <td>Cambio de frenos, revisión eléctrica</td>
             <td>
-              <button type="button" class="btn-agregar" onclick="location.href='editarVehiculos.html'">Editar</button>
-              <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+              <div class="progress-bar">
+                <div class="progress" style="width: 65%;"></div>
+              </div>
+              <small>65% completado</small>
             </td>
-          </tr>
-          <tr>
-            <td>XY987ZT</td>
-            <td>Chevrolet</td>
-            <td>Azul</td>
-            <td>María López</td>
-            <td>2020</td>
-            <td>Revisión pendiente</td>
-            <td>
-              <button type="button" class="btn-agregar" onclick="location.href='editarVehiculos.html'">Editar</button>
-              <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
-            </td>
-          </tr>
-          <!-- Más filas aquí -->
+          </tr>     
+          <!-- Agregá más vehículos si es necesario -->
         </tbody>
       </table>
-      <button type="button" class="btn-agregar" onclick="location.href='agregarVehiculos.html'">Agregar
-        Vehiculo</button>
-
     </section>
   </main>
 
@@ -89,6 +76,44 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+<style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+  
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #f5f5f5;
+      color: #0058a3; /* Azul igual al título */
+    }
+  
+    h1 {
+      color: #0058a3; /* Color azul para el título */
+    }
+  
+    .progress-bar {
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      height: 10px;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  
+    .progress {
+      background-color: #4caf50;
+      height: 10px;
+      border-radius: 4px;
+    }
+  </style>
+  
 
 </body>
 
