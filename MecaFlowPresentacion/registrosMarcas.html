@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registros de Marcas | Mecaflow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    .filtros {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+    
+    .filtro-fechas {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .filtro-fechas label {
+      font-weight: bold;
+    }
+    
+    .filtro-fechas input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .btn-filtrar {
+      background-color: var(--color-primario);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .tipo-entrada {
+      background-color: rgba(0, 87, 163, 0.1);
+      border-left: 4px solid var(--color-primario);
+    }
+    
+    .tipo-salida {
+      background-color: rgba(255, 165, 0, 0.1);
+      border-left: 4px solid var(--color-secundario);
+    }
+    
+    .badge {
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .badge-entrada {
+      background-color: var(--color-primario);
+    }
+    
+    .badge-salida {
+      background-color: var(--color-secundario);
+    }
+    
+    .resumen-semanal {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .resumen-semanal h3 {
+      margin-top: 0;
+      color: var(--color-primario);
+    }
+    
+    .estadisticas {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    
+    .estadistica {
+      flex: 1;
+      text-align: center;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .estadistica-valor {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--color-primario);
+    }
+    
+    .back-button {
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: var(--color-texto);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    
+    .back-button:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Mecaflow</div>
+    <nav>
+      <a href="home.html">Inicio</a>
+      <a href="cuentas.html">Cuentas</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="vehiculos.html">Vehículos</a>
+      <a href="marcas.html">Registro Entrada/Salida</a>
+    </nav>
+    <button class="logout-btn" onclick="location.href='login.html'">Cerrar sesión</button>
+  </header>
+  
+  <main>
+    <a href="marcas.html" class="back-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Volver a Registro
+    </a>
+    
+    <h1>Registros de Marcas de la Semana</h1>
+    
+    <div class="filtros">
+      <div class="filtro-fechas">
+        <label for="fecha-inicio">Desde:</label>
+        <input type="date" id="fecha-inicio" value="2025-04-01">
+        
+        <label for="fecha-fin">Hasta:</label>
+        <input type="date" id="fecha-fin" value="2025-04-07">
+      </div>
+      
+      <button class="btn-filtrar" onclick="filtrarRegistros()">Filtrar</button>
+    </div>
+    
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Tipo</th>
+            <th>Usuario</th>
+            <th>Notas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tipo-entrada">
+            <td>07/04/2025</td>
+            <td>08:15</td>
+            <td><span class="badge badge-entrada">Entrada</span></td>
+            <td>Juan Pérez</td>
+            <td>-</td>
+          </tr>
+          <tr class="tipo-salida">
+            <td>07/04/2025</td>
+            <td>17:30</td>
+            <td><span class="badge badge-salida">Salida</span></td>
+            <td>Juan Pérez</td>
+            <td>-</td>
+          </tr>
+          <tr class="tipo-entrada">
+            <td>06/04/2025</td>
+            <td>08:00</td>
+            <td><span class="badge badge-entrada">Entrada</span></td>
+            <td>María López</td>
+            <td>-</td>
+          </tr>
+          <tr class="tipo-salida">
+            <td>06/04/2025</td>
+            <td>16:45</td>
+            <td><span class="badge badge-salida">Salida</span></td>
+            <td>María López</td>
+            <td>Salida anticipada</td>
+          </tr>
+          <tr class="tipo-entrada">
+            <td>05/04/2025</td>
+            <td>08:30</td>
+            <td><span class="badge badge-entrada">Entrada</span></td>
+            <td>Juan Pérez</td>
+            <td>Entrada con retraso</td>
+          </tr>
+          <tr class="tipo-salida">
+            <td>05/04/2025</td>
+            <td>18:00</td>
+            <td><span class="badge badge-salida">Salida</span></td>
+            <td>Juan Pérez</td>
+            <td>Horas extra</td>
+          </tr>
+          <tr class="tipo-entrada">
+            <td>04/04/2025</td>
+            <td>08:05</td>
+            <td><span class="badge badge-entrada">Entrada</span></td>
+            <td>María López</td>
+            <td>-</td>
+          </tr>
+          <tr class="tipo-salida">
+            <td>04/04/2025</td>
+            <td>17:00</td>
+            <td><span class="badge badge-salida">Salida</span></td>
+            <td>María López</td>
+            <td>-</td>
+          </tr>
+          <tr class="tipo-entrada">
+            <td>03/04/2025</td>
+            <td>08:10</td>
+            <td><span class="badge badge-entrada">Entrada</span></td>
+            <td>Juan Pérez</td>
+            <td>-</td>
+          </tr>
+          <tr class="tipo-salida">
+            <td>03/04/2025</td>
+            <td>17:15</td>
+            <td><span class="badge badge-salida">Salida</span></td>
+            <td>Juan Pérez</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <div class="resumen-semanal">
+      <h3>Resumen de la Semana (01/04/2025 - 07/04/2025)</h3>
+      
+      <div class="estadisticas">
+        <div class="estadistica">
+          <div class="estadistica-valor">10</div>
+          <div class="estadistica-label">Total de Entradas</div>
+        </div>
+        
+        <div class="estadistica">
+          <div class="estadistica-valor">10</div>
+          <div class="estadistica-label">Total de Salidas</div>
+        </div>
+        
+        <div class="estadistica">
+          <div class="estadistica-valor">40:15</div>
+          <div class="estadistica-label">Horas Totales</div>
+        </div>
+        
+        <div class="estadistica">
+          <div class="estadistica-valor">08:03</div>
+          <div class="estadistica-label">Promedio Diario</div>
+        </div>
+      </div>
+    </div>
+    
+  </main>
+  
+  <footer>
+    <p>&copy; <span id="year"></span> Mecaflow. Todos los derechos reservados.</p>
+    <p>
+      <a href="terminos.html">Términos de uso</a> |
+      <a href="privacidad.html">Privacidad</a> |
+      <a href="contacto.html">Contacto</a>
+    </p>
+  </footer>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    
+    function filtrarRegistros() {
+      // En una aplicación real, aquí se realizaría una petición al servidor
+      // para filtrar los registros según las fechas seleccionadas
+      
+      const fechaInicio = document.getElementById('fecha-inicio').value;
+      const fechaFin = document.getElementById('fecha-fin').value;
+      
+      alert(`Filtrando registros desde ${fechaInicio} hasta ${fechaFin}`);
+      
+      // Aquí se actualizaría la tabla con los nuevos datos filtrados
+    }
+  </script>
+</body>
+</html>
