@@ -45,8 +45,8 @@
             <td>2018</td>
             <td>Último servicio: 01/04/2025</td>
             <td>
-              <button class="btn-editar">Editar</button>
-              <button class="btn-eliminar">Eliminar</button>
+                <button type="button" class="btn-agregar" onclick="location.href='editarVehiculos.html'">Editar</button>
+                <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
             </td>
           </tr>
           <tr>
@@ -57,23 +57,24 @@
             <td>2020</td>
             <td>Revisión pendiente</td>
             <td>
-              <button class="btn-editar">Editar</button>
-              <button class="btn-eliminar">Eliminar</button>
-            </td>
+              <button type="button" class="btn-agregar" onclick="location.href='editarVehiculos.html'">Editar</button>
+              <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+          </td>
           </tr>
           <!-- Más filas aquí -->
         </tbody>
       </table>
-      <button class="btn-agregar">Agregar Vehículo</button>
+      <button type="button" class="btn-agregar" onclick="location.href='agregarVehiculos.html'">Agregar Vehiculo</button>
+
     </section>
   </main>
 
   <footer>
     <p>&copy; <span id="year"></span> Mecaflow. Todos los derechos reservados.</p>
     <p>
-      <a href="#">Términos de uso</a> |
-      <a href="#">Privacidad</a> |
-      <a href="#">Contacto</a>
+      <a href="terminos.html">Términos de uso</a> |
+      <a href="privacidad.html">Privacidad</a> |
+      <a href="contacto.html">Contacto</a>
     </p>
   </footer>
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehiculos | Mecaflow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Mecaflow</div>
+    <nav>
+      <a href="home.html">Inicio</a>
+      <a href="cuentas.html">Cuentas</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="vehiculos.html">Vehículos</a>
+    </nav>
+    <button class="logout-btn" onclick="location.href='login.html'">Cerrar sesión</button>
+  </header>
+
+  <main>
+    <h1>Agregar Vehiculos</h1>
+
+    <form class="formulario-agregar-vehiculos" style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px; max-width: 600px;">
+      <h2 style="margin-bottom: 20px;">Agregar Nuevo Vehiculo</h2>
+
+      <!-- Sección Vehiculo -->
+      <fieldset style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+        <legend style="font-weight: bold; font-size: 1.1rem;">Datos del Vehiculo</legend>
+
+        <label for="numero de placa">Número de placa:</label>
+        <input type="text" id="numero de placa" name="numero de placa" required>
+        <br><br>
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="Ford" required>
+        <br><br>
+        <label for="color">Color:</label>
+        <input type="color" id="color" name="color" placeholder="Rojo" required>
+        <br><br>
+        <label for="dueño">Dueño:</label>
+        <input type="dueño" id="dueño" name="dueño" placeholder="Juan Pérez">
+        <br><br>
+        <label for="año">Año:</label>
+        <input type="año" id="año" name="año" placeholder="2018">
+        <br><br>
+        <label for="detalles">Detalles:</label>
+        <input type="detalles" id="detalles" name="detalles" placeholder="Último servicio: 01/04/2025">
+      </fieldset>
+
+
+      <div style="display: flex; gap: 10px;">
+        <button type="button" class="btn-agregar" onclick="location.href='clientes.html'">Guardar Cliente</button>
+
+        <button type="button" class="btn-agregar" onclick="location.href='clientes.html'">Cancelar</button>
+
+      </div>
+    </form>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Mecaflow. Todos los derechos reservados.</p>
+    <p>
+      <a href="terminos.html">Términos de uso</a> |
+      <a href="privacidad.html">Privacidad</a> |
+      <a href="contacto.html">Contacto</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

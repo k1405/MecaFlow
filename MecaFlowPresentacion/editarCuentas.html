@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar Cuentas | Mecaflow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Mecaflow</div>
+    <nav>
+      <a href="home.html">Inicio</a>
+      <a href="cuentas.html">Cuentas</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="vehiculos.html">Vehículos</a>
+    </nav>
+    <button class="logout-btn" onclick="location.href='login.html'">Cerrar sesión</button>
+  </header>
+
+  <main>
+    <h1>Editar Cuentas</h1>
+
+    <form class="formulario-agregar-cuentas" style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px; max-width: 600px;">
+
+      <!-- Sección Cuentas ingresos -->
+      <fieldset style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+        <legend style="font-weight: bold; font-size: 1.1rem;">Datos de las cuentas</legend>
+
+        <label for="fecha">Fecha:</label>
+        <input type="text" id="fecha" name="fecha" value="01/04/2025" required>
+        <br><br>
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="descripcion" value="Pago cliente X" required>
+        <br><br>
+        <label for="monto">Monto:</label>
+        <input type="text" id="monto" name="monto" value="$500" required>
+      </fieldset>
+
+      <div style="display: flex; gap: 10px;">
+        <button type="button" class="btn-agregar" onclick="location.href='cuentas.html'">Guardar Cambios</button>
+        <button type="button" class="btn-agregar" onclick="location.href='cuentas.html'">Cancelar</button>
+      </div>
+    </form>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Mecaflow. Todos los derechos reservados.</p>
+    <p>
+        <a href="terminos.html">Términos de uso</a> |
+        <a href="privacidad.html">Privacidad</a> |
+        <a href="contacto.html">Contacto</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

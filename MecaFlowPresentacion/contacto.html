@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Mecaflow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    .contact-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .contact-section {
+      margin-bottom: 30px;
+    }
+    .contact-section h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+    }
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .contact-card {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+      transition: transform 0.3s;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+    .contact-card h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    .contact-card p {
+      margin: 8px 0;
+    }
+    .department-tag {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.8em;
+      margin-top: 5px;
+    }
+    @media (max-width: 800px) {
+      .contact-methods {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Mecaflow</div>
+    <nav>
+      <a href="home.html">Inicio</a>
+      <a href="cuentas.html">Cuentas</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="vehiculos.html">Vehículos</a>
+    </nav>
+    <button class="logout-btn" onclick="location.href='login.html'">Cerrar sesión</button>
+  </header>
+
+  <main class="contact-container">
+    <h1>Contacta a Nuestro Equipo</h1>
+    <p class="italic">Estamos aquí para ayudarte con cualquier consulta sobre nuestro software para talleres mecánicos.</p>
+    
+    <div class="contact-section">
+      <h2>Equipo Directivo</h2>
+      <div class="contact-methods">
+        <div class="contact-card">
+          <h3>Marcel Zapata</h3>
+          <p><strong>Cargo:</strong> Director Técnico</p>
+          <p><strong>Email:</strong> m.zapata@mecaflow.com</p>
+          <p><strong>Teléfono:</strong> +506 7908 9765</p>
+          <p><strong>Especialidad:</strong> Desarrollo de software</p>
+          <span class="department-tag">Tecnología</span>
+        </div>
+        
+        <div class="contact-card">
+          <h3>Kevin Bogantes</h3>
+          <p><strong>Cargo:</strong> Director Comercial</p>
+          <p><strong>Email:</strong> k.bogantes@mecaflow.com</p>
+          <p><strong>Teléfono:</strong> +506 8765 9761/p>
+          <p><strong>Especialidad:</strong> Soluciones para talleres</p>
+          <span class="department-tag">Ventas</span>
+        </div>
+        
+        <div class="contact-card">
+          <h3>Sebastian Araya</h3>
+          <p><strong>Cargo:</strong> Director de Soporte</p>
+          <p><strong>Email:</strong> s.araya@mecaflow.com</p>
+          <p><strong>Teléfono:</strong> +506 7623 4561 9765</p>
+          <p><strong>Especialidad:</strong> Implementación y formación</p>
+          <span class="department-tag">Soporte</span>
+        </div>
+
+        <div class="contact-card">
+            <h4>Ignacio Canas</h4>
+            <p><strong>Cargo:</strong> Director de proyecto</p>
+            <p><strong>Email:</strong> i.cannas@mecaflow.com</p>
+            <p><strong>Teléfono:</strong> +506 7623 4561 9765</p>
+            <p><strong>Especialidad:</strong> Implementación y formación</p>
+            <span class="department-tag">Soporte</span>
+          </div>
+      </div>
+    </div>
+    
+
+  <footer>
+    <p>&copy; <span id="year"></span> Mecaflow. Todos los derechos reservados.</p>
+    <p>
+      <a href="terminos.html">Términos de uso</a> |
+      <a href="privacidad.html">Privacidad</a> |
+      <a href="contacto.html">Contacto</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
