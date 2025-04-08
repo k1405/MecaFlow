@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Perfil | Mecaflow</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Mecaflow</div>
+    <nav>
+      <a href="home.html">Inicio</a>
+      <a href="cuentas.html">Cuentas</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="vehiculos.html">Vehículos</a>
+      <a href="marcas.html">Registro Entrada/Salida</a>
+      <a href="registrosMarcas.html">Historial Semanal</a>
+      <a href="vehiculoCliente.html">Vehiculos Clientes</a>   
+      <a href="miPerfil.html" class="active">Mi Perfil</a> 
+      <a href="adminRoles.html" class="active">Roles</a> 
+    </nav>
+    <button class="logout-btn" onclick="location.href='login.html'">Cerrar sesión</button>
+  </header>
+
+  <main>
+    <h1>Mi Perfil</h1>
+
+    <section class="form-container">
+      <form id="perfil-form">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" value="Juan Pérez" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" value="juanperez@email.com" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" value="1234567890" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" value="Calle 123" required>
+
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ccc;">
+
+        <h2 style="color: #0058a3; font-size: 20px;">Datos del Vehículo</h2>
+
+        <label for="placa">Número de placa:</label>
+        <input type="text" id="placa" name="placa" value="AB123CD" required>
+
+        <label for="color">Color del vehículo:</label>
+        <input type="text" id="color" name="color" value="Rojo" required>
+
+        <label for="placa">Año</label>
+        <input type="text" id="noaano" name="ano" value="2015" required>
+
+        <button type="submit" class="btn-agregar">Guardar cambios</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Mecaflow. Todos los derechos reservados.</p>
+    <p>
+      <a href="terminos.html">Términos de uso</a> |
+      <a href="privacidad.html">Privacidad</a> |
+      <a href="contacto.html">Contacto</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("perfil-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Tus cambios han sido guardados.");
+      // Acá podés conectar el formulario con backend en el futuro
+    });
+  </script>
+
+  <style>
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #0058a3;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn-agregar {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0058a3;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-agregar:hover {
+      background-color: #00407d;
+    }
+  </style>
+
+</body>
+
+</html>
