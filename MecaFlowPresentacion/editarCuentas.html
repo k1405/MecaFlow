@@ -28,27 +28,32 @@
   <main>
     <h1>Editar Cuentas</h1>
 
-    <form class="formulario-agregar-cuentas" style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px; max-width: 600px;">
-
-      <!-- Sección Cuentas ingresos -->
+    <form class="formulario" style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px; max-width: 600px; margin-inline: auto;">
       <fieldset style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
         <legend style="font-weight: bold; font-size: 1.1rem;">Datos de las cuentas</legend>
-
-        <label for="fecha">Fecha:</label>
-        <input type="text" id="fecha" name="fecha" value="01/04/2025" required>
-        <br><br>
-        <label for="descripcion">Descripción:</label>
-        <input type="text" id="descripcion" name="descripcion" value="Pago cliente X" required>
-        <br><br>
-        <label for="monto">Monto:</label>
-        <input type="text" id="monto" name="monto" value="$500" required>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="fecha">Fecha:</label>
+          <input type="text" id="fecha" name="fecha" value="01/04/2025" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="descripcion">Descripción:</label>
+          <input type="text" id="descripcion" name="descripcion" value="Pago cliente X" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column;">
+          <label for="monto">Monto:</label>
+          <input type="text" id="monto" name="monto" value="$500" required>
+        </div>
       </fieldset>
-
-      <div style="display: flex; gap: 10px;">
+    
+      <div style="display: flex; gap: 10px; justify-content: flex-end;">
         <button type="button" class="btn-agregar" onclick="location.href='cuentas.html'">Guardar Cambios</button>
         <button type="button" class="btn-agregar" onclick="location.href='cuentas.html'">Cancelar</button>
       </div>
     </form>
+    
 
   </main>
 

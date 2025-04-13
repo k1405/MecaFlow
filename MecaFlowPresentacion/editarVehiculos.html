@@ -28,36 +28,73 @@
   <main>
     <h1>Editar Vehiculos</h1>
 
-    <form class="formulario-agregar-vehiculos" style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px; max-width: 600px;">
+    <form class="formulario" style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px; max-width: 600px; margin-inline: auto;">
 
       <!-- Sección Vehículo -->
       <fieldset style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
         <legend style="font-weight: bold; font-size: 1.1rem;">Datos del Vehículo</legend>
-
-        <label for="placa">Número de placa:</label>
-        <input type="text" id="placa" name="placa" value="ABC123" required>
-        <br><br>
-        <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca" value="Toyota" required>
-        <br><br>
-        <label for="color">Color:</label>
-        <input type="text" id="color" name="color" value="Rojo" required>
-        <br><br>
-        <label for="dueño">Dueño:</label>
-        <input type="text" id="dueño" name="dueño" value="Juan Perez" required>
-        <br><br>
-        <label for="año">Año:</label>
-        <input type="text" id="año" name="año" value="2018" required>
-        <br><br>
-        <label for="detalles">Detalles:</label>
-        <input type="text" id="detalles" name="detalles" value="Último servicio: 01/04/2025" required>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="placa">Número de placa:</label>
+          <input type="text" id="placa" name="placa" value="ABC123" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="marca">Marca:</label>
+          <select id="marca" name="marca" required style="
+            padding: 0.6rem;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-family: 'Open Sans', sans-serif;
+            background-color: white;
+            cursor: pointer;
+          ">
+            <option value="">-- Selecciona una marca --</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Honda">Honda</option>
+            <option value="Ford">Ford</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Kia">Kia</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Volkswagen">Volkswagen</option>
+            <option value="Mazda">Mazda</option>
+            <option value="BMW">BMW</option>
+            <option value="Mercedes-Benz">Mercedes-Benz</option>
+            <option value="Audi">Audi</option>
+            <option value="Suzuki">Suzuki</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+          </select>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="color">Color:</label>
+          <input type="text" id="color" name="color" value="Rojo" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="dueño">Dueño:</label>
+          <input type="text" id="dueño" name="dueño" value="Juan Perez" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="año">Año:</label>
+          <input type="text" id="año" name="año" value="2018" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column;">
+          <label for="detalles">Detalles:</label>
+          <input type="text" id="detalles" name="detalles" value="Último servicio: 01/04/2025" required>
+        </div>
       </fieldset>
-
-      <div style="display: flex; gap: 10px;">
+    
+      <div style="display: flex; gap: 10px; justify-content: flex-end;">
         <button type="button" class="btn-agregar" onclick="location.href='vehiculos.html'">Guardar Cambios</button>
         <button type="button" class="btn-agregar" onclick="location.href='vehiculos.html'">Cancelar</button>
       </div>
     </form>
+    
 
   </main>
 

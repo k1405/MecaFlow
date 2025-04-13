@@ -1,104 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cuentas | Mecaflow</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
 
-    <header>
-        <div class="logo">Mecaflow</div>
-        <nav>
-          <a href="home.html">Inicio</a>
-          <a href="cuentas.html">Cuentas</a>
-          <a href="clientes.html">Clientes</a>
-          <a href="vehiculos.html">Vehículos</a>
-          <a href="marcas.html">Registro Entrada/Salida</a>
-          <a href="registrosMarcas.html">Historial Semanal</a>
-          <a href="vehiculoCliente.html">Vehiculos Clientes</a>   
-          <a href="miPerfil.html" class="active">Mi Perfil</a> 
-          <a href="adminRoles.html" class="active">Roles</a> 
-        </nav>
-        <button class="logout-btn" onclick="location.href='login.html'">Cerrar sesión</button>
-      </header>
+  <header>
+    <div class="logo">Mecaflow</div>
+    <nav>
+      <a href="home.html">Inicio</a>
+      <a href="cuentas.html">Cuentas</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="vehiculos.html">Vehículos</a>
+      <a href="marcas.html">Registro Entrada/Salida</a>
+      <a href="registrosMarcas.html">Historial Semanal</a>
+      <a href="vehiculoCliente.html">Vehiculos Clientes</a>
+      <a href="miPerfil.html" class="active">Mi Perfil</a>
+      <a href="adminRoles.html" class="active">Roles</a>
+    </nav>
+    <button class="logout-btn" onclick="location.href='login.html'">Cerrar sesión</button>
+  </header>
 
   <main>
     <h1>Gestión de Cuentas</h1>
 
-    <!-- Ingresos -->
-    <section>
-      <h2>Ingresos</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Descripción</th>
-            <th>Monto</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>01/04/2025</td>
-            <td>Pago cliente X</td>
-            <td>$500</td>
-            <td>
-              <button type="button" class="btn-agregar" onclick="location.href='editarCuentas.html'">Editar</button>
-              <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>02/04/2025</td>
-            <td>Pago cliente Y</td>
-            <td>$300</td>
-            <td>
-              <button type="button" class="btn-agregar" onclick="location.href='editarCuentas.html'">Editar</button>
-              <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button class="btn-agregar">Agregar Ingreso</button>
-    </section>
+    <div class="tabs-container">
+      <div class="tabs">
+        <button class="tab active" onclick="mostrarTab(event, 'ingresos')">Ingresos</button>
+        <button class="tab" onclick="mostrarTab(event, 'egresos')">Egresos</button>
 
-    <!-- Egresos -->
-    <section>
-      <h2>Egresos</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Descripción</th>
-            <th>Monto</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>01/04/2025</td>
-            <td>Compra de repuestos</td>
-            <td>$200</td>
-            <td>
-              <button type="button" class="btn-agregar" onclick="location.href='editarCuentas.html'">Editar</button>
-              <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>03/04/2025</td>
-            <td>Pago de servicios</td>
-            <td>$100</td>
-            <td>
-              <button type="button" class="btn-agregar" onclick="location.href='editarCuentas.html'">Editar</button>
-              <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button class="btn-agregar">Agregar Egreso</button>
-    </section>
+      </div>
+
+      <!-- Ingresos -->
+      <section id="ingresos" class="tab-content active">
+        <h2>Ingresos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Descripción</th>
+              <th>Monto</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01/04/2025</td>
+              <td>Pago cliente X</td>
+              <td>$500</td>
+              <td>
+                <button type="button" class="btn-agregar" onclick="location.href='editarCuentas.html'">Editar</button>
+                <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>02/04/2025</td>
+              <td>Pago cliente Y</td>
+              <td>$300</td>
+              <td>
+                <button type="button" class="btn-agregar" onclick="location.href='editarCuentas.html'">Editar</button>
+                <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn-agregar">Agregar Ingreso</button>
+      </section>
+
+      <!-- Egresos -->
+      <section id="egresos" class="tab-content">
+        <h2>Egresos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Descripción</th>
+              <th>Monto</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01/04/2025</td>
+              <td>Compra de repuestos</td>
+              <td>$200</td>
+              <td>
+                <button type="button" class="btn-agregar" onclick="location.href='editarCuentas.html'">Editar</button>
+                <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>03/04/2025</td>
+              <td>Pago de servicios</td>
+              <td>$100</td>
+              <td>
+                <button type="button" class="btn-agregar" onclick="location.href='editarCuentas.html'">Editar</button>
+                <button class="btn-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn-agregar">Agregar Egreso</button>
+      </section>
+    </div>
   </main>
 
   <footer>
@@ -112,7 +124,30 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  
+    function mostrarTab(elemento, tabId) {
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".tab-content");
+  
+      // Ocultar todas las secciones
+      contents.forEach(c => c.classList.remove("active"));
+  
+      // Mostrar la sección seleccionada
+      document.getElementById(tabId).classList.add("active");
+  
+      // Cambiar estilo activo al botón
+      tabs.forEach(tab => tab.classList.remove("active"));
+      elemento.classList.add("active");
+    }
+  
+    function confirmarEliminacion() {
+      return confirm("¿Estás seguro de que deseas eliminar este registro?");
+    }
   </script>
+  
+
+
 
 </body>
+
 </html>

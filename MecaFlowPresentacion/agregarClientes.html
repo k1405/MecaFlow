@@ -28,51 +28,93 @@
   <main>
     <h1>Agregar Clientes</h1>
 
-    <form class="formulario-agregar-cliente" style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px; max-width: 600px;">
-      <h2 style="margin-bottom: 20px;">Agregar Nuevo Cliente</h2>
-
+    <form class="formulario" style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px; max-width: 600px; margin-inline: auto;">
+      <h2 style="margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">Agregar Nuevo Cliente</h2>
+    
       <!-- Sección Cliente -->
       <fieldset style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
         <legend style="font-weight: bold; font-size: 1.1rem;">Datos del Cliente</legend>
-
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <br><br>
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required>
-        <br><br>
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="+506 8393-9341" required>
-        <br><br>
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" placeholder="cliente@email.com">
-        <br><br>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+506 8888-8888" required>
+          <small id="telefono-error" style="color: red; display: none; font-size: 0.9rem;">Formato incorrecto. CR: 8888-8888</small>
+        </div>
+    
+        <div style="display: flex; flex-direction: column;">
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" id="correo" name="correo" placeholder="cliente@email.com" required>
+          <small id="correo-error" style="color: red; display: none; font-size: 0.9rem;">Correo no válido</small>
+        </div>
       </fieldset>
-
+    
       <!-- Sección Vehículo -->
       <fieldset style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
         <legend style="font-weight: bold; font-size: 1.1rem;">Datos del Vehículo</legend>
-
-        <label for="placa">Placa:</label>
-        <input type="text" id="placa" name="placa" required>
-        <br><br>
-        <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca" required>
-        <br><br>
-        <label for="modelo">Modelo:</label>
-        <input type="text" id="modelo" name="modelo" required>
-        <br><br>
-        <label for="fallo">Descripción del fallo:</label><br>
-        <textarea id="fallo" name="fallo" rows="4" placeholder="Describa el problema que presenta el vehículo." required></textarea>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="placa">Placa:</label>
+          <input type="text" id="placa" name="placa" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="marca">Marca:</label>
+          <select id="marca" name="marca" required style="
+            padding: 0.6rem;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-family: 'Open Sans', sans-serif;
+            background-color: white;
+            cursor: pointer;
+          ">
+            <option value="">-- Selecciona una marca --</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Honda">Honda</option>
+            <option value="Ford">Ford</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Kia">Kia</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Volkswagen">Volkswagen</option>
+            <option value="Mazda">Mazda</option>
+            <option value="BMW">BMW</option>
+            <option value="Mercedes-Benz">Mercedes-Benz</option>
+            <option value="Audi">Audi</option>
+            <option value="Suzuki">Suzuki</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+          </select>
+        </div>
+        
+        
+    
+        <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
+          <label for="modelo">Modelo:</label>
+          <input type="text" id="modelo" name="modelo" required>
+        </div>
+    
+        <div style="display: flex; flex-direction: column;">
+          <label for="fallo">Descripción del fallo:</label>
+          <textarea id="fallo" name="fallo" rows="4" placeholder="Describa el problema que presenta el vehículo." required></textarea>
+        </div>
       </fieldset>
-
-      <div style="display: flex; gap: 10px;">
-        <button type="button" class="btn-agregar" onclick="location.href='clientes.html'">Guardar Cliente</button>
-
+    
+      <div style="display: flex; gap: 10px; justify-content: flex-end;">
+        <button type="submit" class="btn-agregar">Guardar Cliente</button>
         <button type="button" class="btn-agregar" onclick="location.href='clientes.html'">Cancelar</button>
-
       </div>
     </form>
+    
 
   </main>
 
@@ -91,3 +133,35 @@
 
 </body>
 </html>
+
+<script>
+  // Validación de correo electrónico
+  const correoInput = document.getElementById("correo");
+  const correoError = document.getElementById("correo-error");
+
+  correoInput.addEventListener("input", function () {
+    const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (correoInput.value.trim() !== "" && !correoRegex.test(correoInput.value)) {
+      correoError.style.display = "block";
+      correoInput.style.borderColor = "red";
+    } else {
+      correoError.style.display = "none";
+      correoInput.style.borderColor = "";
+    }
+  });
+
+  // Validación de teléfono (8888-8888)
+  const telefonoInput = document.getElementById("telefono");
+  const telefonoError = document.getElementById("telefono-error");
+
+  telefonoInput.addEventListener("input", function () {
+    const telefonoRegex = /^\d{4}-\d{4}$/;
+    if (telefonoInput.value.trim() !== "" && !telefonoRegex.test(telefonoInput.value)) {
+      telefonoError.style.display = "block";
+      telefonoInput.style.borderColor = "red";
+    } else {
+      telefonoError.style.display = "none";
+      telefonoInput.style.borderColor = "";
+    }
+  });
+</script>
