@@ -47,12 +47,14 @@
     
         <div style="display: flex; flex-direction: column; margin-bottom: 1rem;">
           <label for="telefono">Teléfono:</label>
-          <input type="tel" id="telefono" name="telefono" value="+506 8393-9341" required>
+          <input type="tel" id="telefono" name="telefono" placeholder="8888-8888" required>
+          <small id="telefono-error" style="color: red; display: none; font-size: 0.9rem;">Formato incorrecto. CR: 8888-8888</small>
         </div>
     
         <div style="display: flex; flex-direction: column;">
           <label for="correo">Correo electrónico:</label>
-          <input type="email" id="correo" name="correo" value="juan.perez@email.com">
+          <input type="email" id="correo" name="correo" placeholder="cliente@email.com" required>
+          <small id="correo-error" style="color: red; display: none; font-size: 0.9rem;">Correo no válido</small>
         </div>
       </fieldset>
     
@@ -131,3 +133,35 @@
 
 </body>
 </html>
+
+<script>
+  // Validación de correo electrónico
+  const correoInput = document.getElementById("correo");
+  const correoError = document.getElementById("correo-error");
+
+  correoInput.addEventListener("input", function () {
+    const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (correoInput.value.trim() !== "" && !correoRegex.test(correoInput.value)) {
+      correoError.style.display = "block";
+      correoInput.style.borderColor = "red";
+    } else {
+      correoError.style.display = "none";
+      correoInput.style.borderColor = "";
+    }
+  });
+
+  // Validación de teléfono (8888-8888)
+  const telefonoInput = document.getElementById("telefono");
+  const telefonoError = document.getElementById("telefono-error");
+
+  telefonoInput.addEventListener("input", function () {
+    const telefonoRegex = /^\d{4}-\d{4}$/;
+    if (telefonoInput.value.trim() !== "" && !telefonoRegex.test(telefonoInput.value)) {
+      telefonoError.style.display = "block";
+      telefonoInput.style.borderColor = "red";
+    } else {
+      telefonoError.style.display = "none";
+      telefonoInput.style.borderColor = "";
+    }
+  });
+</script>
