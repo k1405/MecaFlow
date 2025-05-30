@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36127.28 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mecaflow", "Mecaflow\Mecaflow.csproj", "{81B88DCB-C102-40BB-9FE3-7A43A07F0CB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MecaFlow", "MecaFlow\MecaFlow.csproj", "{FCC8255D-8256-4EDB-B034-198A242791D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{81B88DCB-C102-40BB-9FE3-7A43A07F0CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81B88DCB-C102-40BB-9FE3-7A43A07F0CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81B88DCB-C102-40BB-9FE3-7A43A07F0CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81B88DCB-C102-40BB-9FE3-7A43A07F0CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC8255D-8256-4EDB-B034-198A242791D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC8255D-8256-4EDB-B034-198A242791D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC8255D-8256-4EDB-B034-198A242791D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC8255D-8256-4EDB-B034-198A242791D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8152EB02-83CD-4343-BB06-E22C26E3428E}
+		SolutionGuid = {92527F04-FCFA-4955-9B3B-F4B7D098E0BE}
 	EndGlobalSection
 EndGlobal
