@@ -6,18 +6,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-<<<<<<< Updated upstream
-=======
-  <ItemGroup>
-    <Compile Remove="wwwroot\lib\NewFolder\**" />
-    <Content Remove="wwwroot\lib\NewFolder\**" />
-    <EmbeddedResource Remove="wwwroot\lib\NewFolder\**" />
-    <None Remove="wwwroot\lib\NewFolder\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\img\" />
-  </ItemGroup>
-
->>>>>>> Stashed changes
 </Project>
