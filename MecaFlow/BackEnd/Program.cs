@@ -14,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 #region DI
+<<<<<<< HEAD
 
 builder.Services.AddDbContext<MecaFlowContext>();
 
@@ -21,6 +22,11 @@ builder.Services.AddScoped<IUnidadDeTrabajo, UnidadDeTrabajo>();
 
 builder.Services.AddScoped<IClienteDAL, ClienteDAL>();
 
+=======
+builder.Services.AddDbContext<MecaFlowContext>();
+builder.Services.AddScoped<IUnidadDeTrabajo, UnidadDeTrabajo>();
+builder.Services.AddScoped<IClienteDAL, ClienteDAL>();
+>>>>>>> main
 builder.Services.AddScoped<IClienteService, ClienteService>();
 
 
